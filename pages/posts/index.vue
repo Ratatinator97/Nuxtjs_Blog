@@ -1,6 +1,6 @@
 <template>
   <div class="posts-page">
-    <PostList />
+    <PostList :posts="loadedPosts" />
   </div>
 </template>
 
@@ -10,6 +10,12 @@ import PostsList from "@/components/Posts/PostsList";
 export default {
   components: {
     PostList: PostsList
+  },
+
+  computed: {
+    loadedPosts() {
+      return this.$store.getters.loadedPosts;
+    }
   }
 };
 </script>

@@ -1,29 +1,39 @@
 <template>
   <div class="admin-post-age">
     <section class="update-form">
-      <AdminPostForm :post="loadedPost" />
+      <AdminPostForm :post="loadedPost" @submit="onSubmitted" />
     </section>
   </div>
 </template>
 
 <script>
 import AdminPostForm from "@/components/Admin/AdminPostForm";
+import axios from "axios";
 export default {
   layout: "admin",
+  middleware: ["check-auth", "auth"],
   components: {
     AdminPostForm
   },
-
-  data() {
-    return {
-      loadedPost: {
-        author: "Alex",
-        title: "Awesome Post",
-        content: "Usefull content",
-        thumbnailLink:
-          "https://www.euractiv.com/wp-content/uploads/sites/2/2017/08/Motherboard-Tech-Chip-Board-Computer-Technology-822056.jpg"
-      }
-    };
+  asyncData(context) {
+    return axios
+      .get(
+        "https://nuxt-blog-429ca.firebaseio.com/posts/" +
+          context.params.postId +
+          ".json"
+      )
+      .then(res => {
+        console.log(res.data);
+        return { loadedPost: { ...res.data, id: context.params.postId } };
+      })
+      .catch(e => context.error(e));
+  },
+  methods: {
+    onSubmitted(editedPost) {
+      this.$store
+        .dispatch("editPost", editedPost)
+        .then(() => this.$router.push("/admin"));
+    }
   }
 };
 </script>

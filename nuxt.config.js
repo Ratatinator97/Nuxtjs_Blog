@@ -20,16 +20,18 @@ export default {
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#fff' },
+  loading: { color: '#fa923f', height: '5px', duration: '50000', throttle: 0 },
   /*
   ** Global CSS
   */
   css: [
+    '~assets/styles/main.css'
   ],
   /*
   ** Plugins to load before mounting the App
   */
   plugins: [
+    '~/plugins/date.js'
   ],
   /*
   ** Nuxt.js dev-modules
@@ -50,5 +52,8 @@ export default {
     */
     extend(config, ctx) {
     }
+  },
+  env: {
+    apiKey: 'AIzaSyDb-ZMqBH6ZU22dThScSpXEv9epJnGZW2o'
   }
 }
