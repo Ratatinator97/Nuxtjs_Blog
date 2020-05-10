@@ -23,6 +23,9 @@
 import axios from "axios";
 export default {
   asyncData(context) {
+    if (context.payload) {
+      return { loadedPost: context.payload.postData };
+    }
     return axios
       .get(
         "https://nuxt-blog-429ca.firebaseio.com/posts/" +
