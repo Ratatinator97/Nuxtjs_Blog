@@ -29,15 +29,7 @@ const createStore = () => {
         },
         actions: {
             nuxtServerInit(vuexContext, context) {
-                return axios.get('https://nuxt-blog-429ca.firebaseio.com/posts.json')
-                    .then((response) => {
-                        const postsArray = [];
-                        for (const key in response.data) {
-                            postsArray.push({ ...response.data[key], id: key });
-                        }
-                        vuexContext.commit('setPosts', postsArray)
-                    })
-                    .catch(e => context.error(e))
+
             },
             setPosts(vuexContext, posts) {
                 vuexContext.commit('setPosts', posts);

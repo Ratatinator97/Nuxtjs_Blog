@@ -9,7 +9,7 @@
 <script>
 import TheHeader from "@/components/Navigation/TheHeader";
 import TheSidenav from "@/components/Navigation/TheSidenav";
-
+import axios from "axios";
 export default {
   components: {
     TheHeader,
@@ -19,6 +19,18 @@ export default {
     return {
       displaySidenav: false
     };
+  },
+  created() {
+    return axios
+      .get("https://nuxt-blog-429ca.firebaseio.com/posts.json")
+      .then(response => {
+        const postsArray = [];
+        for (const key in response.data) {
+          postsArray.push({ ...response.data[key], id: key });
+        }
+        this.$store.commit("setPosts", postsArray);
+      })
+      .catch(e => console.log(e));
   }
 };
 </script>
