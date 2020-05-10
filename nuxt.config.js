@@ -57,8 +57,8 @@ export default {
   env: {
     apiKey: 'AIzaSyDb-ZMqBH6ZU22dThScSpXEv9epJnGZW2o'
   },
-  router: {
-    base: '/Nuxtjs_Blog/'
-  },
+  // router: {
+  //   base: '/Nuxtjs_Blog/'
+  // },
 
 }
