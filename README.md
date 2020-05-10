@@ -6,7 +6,9 @@ It is a simple blog, it implements authentification, post editing etc.
 
 The backend has been made with [firebase](https://firebase.google.com/). 
 
-It is deployed as a static webpage. Wich means it has to recompile in order to have new blog posts/entry posts.
+It is deployed as a **static** webpage. Wich means it has to recompile in order to have new blog posts/entry posts.
+
+The project is hosted on Vercel for the **SPA** mode : https://nuxtjs-blog.now.sh/ 
 
 ## Getting Started
 
