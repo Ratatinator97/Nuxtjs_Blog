@@ -1,10 +1,5 @@
 const axios = require('axios');
 
-const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
-  router: {
-    base: '/Nuxtjs_Blog/'
-  }
-} : {}
 export default {
   mode: 'universal',
   /*
@@ -62,7 +57,9 @@ export default {
   env: {
     apiKey: 'AIzaSyDb-ZMqBH6ZU22dThScSpXEv9epJnGZW2o'
   },
-  ...routerBase,
+  router: {
+    base: '/Nuxtjs_Blog/'
+  },
   generate: {
     routes: function () {
       return axios.get('https://nuxt-blog-429ca.firebaseio.com/posts.json')

@@ -1,22 +1,42 @@
-# Blog
+# Nuxtjs Blog
 
-> My first-rate Nuxt.js project
+This is a project I made during the Nuxtjs course I followed.
 
-## Build Setup
+It is a simple blog, it implements authentification, post editing etc.
 
-```bash
-# install dependencies
-$ npm install
+The backend has been made with [firebase](https://firebase.google.com/). 
 
-# serve with hot reload at localhost:3000
-$ npm run dev
+## Getting Started
 
-# build for production and launch server
-$ npm run build
-$ npm run start
+Clone this repository.
 
-# generate static project
-$ npm run generate
+### Prerequisites
+
+Make sure you have npm and node installed on your system.
+
+### Installing
+
+```
+npm install
 ```
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+then :
+
+```
+npm run dev
+```
+
+## Built With
+
+* [NuxtJS](https://nuxtjs.org/) - Front-end framework for VueJS
+* [Firebase](https://firebase.google.com/) - A Baas made by Google
+
+## Authors
+
+Alexandros SIDIRAS and Maximilian Schwartzmuller (Academind)
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE.md file for details
+
+# 
